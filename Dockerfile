@@ -9,3 +9,5 @@ RUN apt-get update -y \
         wget \
     && apt-get autoremove -y \
     && apt-get autoclean -y
+
+COPY scripts /scripts
