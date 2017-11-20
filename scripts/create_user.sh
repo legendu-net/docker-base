@@ -39,6 +39,8 @@ function create_user() {
         useradd -om -u $user_id -g $group -d /home/$user -s /bin/bash -c "$user" $user
         echo $user:$password | chpasswd
         gpasswd -a $user sudo
+    else
+        echo "The user $user already exists!"
     fi
 }
 
