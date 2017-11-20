@@ -35,13 +35,13 @@ function create_user() {
         groupadd -o -g $group_id $group
     fi
     id $user
-    if [[ $? == 1 ]]; then
-        useradd -om -u $user_id -g $group -d /home/$user -s /bin/bash -c "$user" $user
-        echo $user:$password | chpasswd
-        gpasswd -a $user sudo
-    else
+    if [[ $? == 0 ]]; then
         echo "The user $user already exists!"
+        return 0
     fi
+    useradd -om -u $user_id -g $group -d /home/$user -s /bin/bash -c "$user" $user
+    echo $user:$password | chpasswd
+    gpasswd -a $user sudo
 }
 
 if [[ "$0" == ${BASH_SOURCE[0]} ]]; then
