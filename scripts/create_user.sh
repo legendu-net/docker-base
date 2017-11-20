@@ -34,9 +34,13 @@ function create_user() {
     if [[ "$(getent group $group)" == "" ]]; then
         groupadd -o -g $group_id $group
     fi
-    useradd -om -u $user_id -g $group -d /home/$user -s /bin/bash -c "$user" $user
-    echo $user:$password | chpasswd
-    gpasswd -a $user sudo
+    id $user
+    if [[ $? == 1 ]]; then
+        useradd -om -u $user_id -g $group -d /home/$user -s /bin/bash -c "$user" $user
+        echo $user:$password | chpasswd
+        gpasswd -a $user sudo
+    fi
+    fi
 }
 
 if [[ "$0" == ${BASH_SOURCE[0]} ]]; then
