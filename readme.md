@@ -10,5 +10,7 @@ Ubuntu with basic utils.
 ## Usage 
 
 ```
-docker run -it dclong/ubuntu_b
+docker run -it \
+    --log-opt max-size=50m \
+    dclong/ubuntu_b
 ```
