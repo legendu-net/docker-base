@@ -1,7 +1,7 @@
 
 # [dclong/ubuntu_b](https://hub.docker.com/r/dclong/ubuntu_b/)
 
-Ubuntu with basic utils.
+Ubuntu with basic utils in Docker.
 
 ## About the Author
 

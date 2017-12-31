@@ -6,7 +6,7 @@ RUN apt-get update -y \
         wajig software-properties-common apt-transport-https \
         vim git colordiff \
         gcc cmake \
-        wget \
+        wget curl \
     && apt-get autoremove -y \
     && apt-get autoclean -y
 
