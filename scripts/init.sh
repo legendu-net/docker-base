@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # create a user
+DOCKER_USER=${DOCKER_USER:-dclong} 
 DOCKER_USER_ID=${DOCKER_USER_ID:-9001} 
 DOCKER_PASSWORD=${DOCKER_PASSWORD:-$DOCKER_USER} 
 DOCKER_GROUP=${DOCKER_GROUP:-docker} 
