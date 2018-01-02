@@ -39,7 +39,8 @@ function create_user() {
         echo "The user $user already exists!"
         return 0
     fi
-    useradd -om -u $user_id -g $group -d /home/$user -s /bin/bash -c "$user" $user
+    # the -l option below is to avoid huge lastlog file
+    useradd -oml -u $user_id -g $group -d /home/$user -s /bin/bash -c "$user" $user
     echo $user:$password | chpasswd
 }
 
