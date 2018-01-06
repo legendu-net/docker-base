@@ -19,7 +19,7 @@
         - [dclong/rstudio](https://hub.docker.com/r/dclong/rstudio/)
 - [dclong/proxychains](https://hub.docker.com/r/dclong/proxychains)
 - [dclong/python](https://hub.docker.com/r/dclong/python/)
-    - dryscripe
+    - [dclong/dryscrape](https://hub.docker.com/r/dclong/dryscrape/)
     - [dclong/flask](https://hub.docker.com/r/dclong/flask/)
     - [dclong/jupyter](https://hub.docker.com/r/dclong/jupyter/)
         - [dclong/jupyter-beakerx](https://hub.docker.com/r/dclong/jupyter-beakerx/)
