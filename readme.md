@@ -33,7 +33,7 @@ docker run -it \
     dclong/ubuntu_b
 ```
 
-## Derived Images Based [dclong/ubuntu_b](https://hub.docker.com/r/dclong/ubuntu_b/)
+## Image Tree Related to [dclong/ubuntu_b](https://hub.docker.com/r/dclong/ubuntu_b/)
 
 [dclong/ubuntu_b](https://hub.docker.com/r/dclong/ubuntu_b/)
 
