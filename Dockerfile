@@ -4,7 +4,7 @@ RUN apt-get update -y \
     && apt-get install -y \
         sudo \
         wajig software-properties-common apt-transport-https \
-        lsb_release \
+        lsb-release \
         vim git colordiff \
         gcc cmake \
         wget curl \
@@ -12,3 +12,4 @@ RUN apt-get update -y \
     && apt-get autoclean -y
 
 COPY scripts /scripts
+
