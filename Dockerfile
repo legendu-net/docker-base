@@ -4,10 +4,13 @@ RUN apt-get update -y \
     && apt-get install -y \
         sudo \
         wajig software-properties-common apt-transport-https \
-        lsb_release \
         vim git colordiff \
         gcc cmake \
-        wget curl \
+        wget curl
+        
+RUN apt-get update -y \
+    && apt-get install -y 
+        lsb_release
     && apt-get autoremove -y \
     && apt-get autoclean -y
 
