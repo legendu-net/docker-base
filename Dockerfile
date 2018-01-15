@@ -9,8 +9,8 @@ RUN apt-get update -y \
         wget curl
         
 RUN apt-get update -y \
-    && apt-get install -y 
-        lsb_release
+    && apt-get install -y \
+        lsb_release \
     && apt-get autoremove -y \
     && apt-get autoclean -y
 
