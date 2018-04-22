@@ -8,6 +8,7 @@ RUN apt-get update -y \
         vim git colordiff \
         gcc cmake \
         wget curl \
+        unzip bzip2 \
     && apt-get autoremove -y \
     && apt-get autoclean -y
 
