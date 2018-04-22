@@ -30,6 +30,10 @@ that you can use.
 ```
 docker run -d \
     --log-opt max-size=50m \
+    -e DOCKER_USER=`id -un` \
+    -e DOCKER_USER_ID=`id -u` \
+    -e DOCKER_PASSWORD=`id -un` \
+    -e DOCKER_GROUP_ID=`id -g` \
     dclong/ubuntu_b
 ```
 
