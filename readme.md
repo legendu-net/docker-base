@@ -28,7 +28,7 @@ that you can use.
 ## Usage in Linux/Unix
 
 ```
-docker run -it \
+docker run -d \
     --log-opt max-size=50m \
     dclong/ubuntu_b
 ```
