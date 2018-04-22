@@ -13,3 +13,4 @@ RUN apt-get update -y \
 
 COPY scripts /scripts
 
+ENTRYPOINT ["/scripts/init.sh"]
