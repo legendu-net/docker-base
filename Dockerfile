@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu
 
 RUN apt-get update -y \
     && apt-get install -y \
@@ -11,6 +11,8 @@ RUN apt-get update -y \
         unzip bzip2 \
     && apt-get autoremove -y \
     && apt-get autoclean -y
+
+RUN mkdir -p /workdir && chmod 777 /workdir
 
 COPY scripts /scripts
 
