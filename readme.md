@@ -2,10 +2,6 @@
 
 Ubuntu with basic utils in Docker.
 
-## About the Author
-
-[Personal Blog](http://www.legendu.net)   |   [GitHub](https://github.com/dclong)   |   [Bitbucket](https://bitbucket.org/dclong/)   |   [LinkedIn](http://www.linkedin.com/in/ben-chuanlong-du-1239b221/)
-
 ## Details
 
 OS: Ubuntu LTS
@@ -93,3 +89,7 @@ docker run -d \
                 - [dclong/xubuntu-intellij](https://hub.docker.com/r/dclong/xubuntu-intellij/)
         - [dclong/xubuntu-py](https://hub.docker.com/r/dclong/xubuntu-py/)
             - [dclong/xubuntu-pycharm](https://hub.docker.com/r/dclong/xubuntu-pycharm/)
+
+## About the Author
+
+[Personal Blog](http://www.legendu.net)   |   [GitHub](https://github.com/dclong)   |   [Bitbucket](https://bitbucket.org/dclong/)   |   [LinkedIn](http://www.linkedin.com/in/ben-chuanlong-du-1239b221/)
