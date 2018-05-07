@@ -25,6 +25,7 @@ that you can use.
 
 ```
 docker run -d \
+    --name ubuntu_b \
     --log-opt max-size=50m \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
