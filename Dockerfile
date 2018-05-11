@@ -4,7 +4,7 @@ RUN apt-get update -y \
     && apt-get install -y \
         sudo \
         wajig software-properties-common apt-transport-https \
-        lsb-release \
+        locales lsb-release \
         vim git colordiff \
         gcc cmake \
         wget curl \
