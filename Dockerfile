@@ -12,7 +12,8 @@ RUN apt-get update -y \
     && apt-get autoremove -y \
     && apt-get autoclean -y
 
-RUN mkdir -p /workdir && chmod 777 /workdir
+RUN locale-gen en_US && locale-gen en_US.UTF-8 \
+    && mkdir -p /workdir && chmod 777 /workdir
 
 COPY scripts /scripts
 
