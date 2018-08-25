@@ -4,7 +4,7 @@ Ubuntu with basic utils in Docker.
 
 ## Details
 
-OS: Ubuntu LTS
+OS: Ubuntu 16.04
 
 ### Additional Docker Environment Variables
 
