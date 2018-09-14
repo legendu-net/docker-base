@@ -7,7 +7,7 @@ RUN apt-get update -y \
         locales lsb-release \
         vim git colordiff \
         gcc cmake \
-        wget curl \
+        rsync wget curl \
         unzip bzip2 \
     && apt-get autoremove -y \
     && apt-get autoclean -y
