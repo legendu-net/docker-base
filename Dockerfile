@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 RUN apt-get update -y \
     && apt-get install -y \
@@ -7,7 +7,7 @@ RUN apt-get update -y \
         locales lsb-release \
         vim git colordiff \
         gcc cmake \
-        wget curl \
+        rsync wget curl \
         unzip bzip2 \
     && apt-get autoremove -y \
     && apt-get autoclean -y
