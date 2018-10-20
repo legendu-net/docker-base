@@ -12,6 +12,11 @@ RUN apt-get update -y \
     && apt-get autoremove -y \
     && apt-get autoclean -y
 
+# timezone
+ARG TZ=America/Los_Angeles
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
+    && echo $TZ > /etc/timezone
+
 RUN locale-gen en_US.UTF-8 \
     && mkdir -p /workdir && chmod 777 /workdir
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8  
