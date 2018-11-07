@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 
 RUN apt-get update -y \
-    && apt-get install -y \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y \
         sudo \
         wajig software-properties-common apt-transport-https \
         tzdata locales lsb-release \
