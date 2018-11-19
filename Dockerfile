@@ -5,6 +5,7 @@ RUN apt-get update -y \
         sudo \
         wajig software-properties-common apt-transport-https \
         locales lsb-release \
+        bash-completion man-db \
         vim git colordiff \
         gcc cmake \
         rsync wget curl \
