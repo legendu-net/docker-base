@@ -8,7 +8,7 @@ RUN apt-get update -y \
         bash-completion man-db \
         vim git colordiff \
         gcc cmake \
-        rsync wget curl \
+        rsync wget curl proxychains \
         unzip bzip2 \
     && apt-get autoremove -y \
     && apt-get autoclean -y
