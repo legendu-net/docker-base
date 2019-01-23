@@ -5,7 +5,7 @@ RUN apt-get update -y \
         sudo \
         wajig software-properties-common apt-transport-https \
         tzdata locales lsb-release \
-        bash-completion man-db \
+        bash-completion command-not-found man-db \
         vim git colordiff \
         gcc cmake \
         rsync wget curl proxychains \
