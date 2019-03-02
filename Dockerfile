@@ -6,7 +6,7 @@ RUN apt-get update -y \
         wajig software-properties-common apt-transport-https \
         tzdata locales lsb-release \
         bash-completion command-not-found man-db \
-        vim git colordiff \
+        neovim git colordiff \
         gcc cmake \
         rsync wget curl proxychains \
         unzip bzip2 \
