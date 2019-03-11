@@ -8,13 +8,10 @@ RUN apt-get update -y \
         bash-completion command-not-found man-db \
         neovim git colordiff \
         gcc cmake \
-        rsync wget curl proxychains \
+        rsync wget curl \
         unzip bzip2 \
     && apt-get autoremove -y \
     && apt-get autoclean -y
-
-# proxychains configuration
-COPY settings/proxychains.conf /etc/proxychains.conf
 
 # timezone
 ARG TZ=America/Los_Angeles
