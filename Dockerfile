@@ -13,6 +13,9 @@ RUN apt-get update -y \
     && apt-get autoremove -y \
     && apt-get autoclean -y
 
+# proxychains configuration
+COPY settings/proxychains.conf /etc/proxychains.conf
+
 # timezone
 ARG TZ=America/Los_Angeles
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
