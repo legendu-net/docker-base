@@ -2,7 +2,7 @@
 
 function copy_if_exists(){
     local src="$1"
-    local des="${$2:$HOME}"
+    local des="${$2:-$HOME}"
     if [[ -e "$src" ]]; then
         cp -r "$src" "$des"
     fi
@@ -10,7 +10,7 @@ function copy_if_exists(){
 
 function link_if_exists(){
     local src="$1"
-    local des="${$2:$HOME}"
+    local des="${$2:-$HOME}"
     if [[ -e "$src" ]]; then
         ln -svf "$src" "$des"
     fi
