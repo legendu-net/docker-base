@@ -15,4 +15,4 @@ for f in $(ls /scripts/[0-9][0-9]-*.sh); do
 done
 
 # su -m $DOCKER_USER -c /scripts/launch.sh
-source /scripts/launch.sh
+source /scripts/sys/launch.sh
