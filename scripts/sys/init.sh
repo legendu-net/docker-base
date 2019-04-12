@@ -10,7 +10,7 @@ DOCKER_GROUP_ID=${DOCKER_GROUP_ID:-9001}
 gpasswd -a $DOCKER_USER sudo
 
 # source in scripts
-for f in $(ls /scripts/config/[0-9][0-9]-*.sh); do
+for f in $(ls /scripts/config/[0-9][0-9][0-9]-*.sh); do
     source $f
 done
 
