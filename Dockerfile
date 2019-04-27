@@ -6,7 +6,7 @@ RUN apt-get update -y \
         software-properties-common apt-transport-https \
         tzdata locales lsb-release \
         bash-completion command-not-found man-db \
-        neovim git colordiff \
+        neovim git \
         gcc cmake \
         rsync wget curl \
         unzip bzip2 \
