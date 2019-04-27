@@ -3,7 +3,7 @@ FROM ubuntu:18.10
 RUN apt-get update -y \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y \
         sudo \
-        wajig software-properties-common apt-transport-https \
+        software-properties-common apt-transport-https \
         tzdata locales lsb-release \
         bash-completion command-not-found man-db \
         neovim git colordiff \
