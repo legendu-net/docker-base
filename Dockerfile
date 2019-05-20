@@ -9,7 +9,7 @@ RUN apt-get update -y \
         neovim git \
         rsync curl \
     && apt-get autoremove -y \
-    && apt-get autoclean -y
+    && apt-get clean -y
 
 # timezone
 ARG TZ=America/Los_Angeles
