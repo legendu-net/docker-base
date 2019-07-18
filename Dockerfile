@@ -5,7 +5,7 @@ RUN apt-get update -y \
         sudo \
         software-properties-common apt-transport-https \
         tzdata locales \
-        bash-completion command-not-found man-db \
+        bash-completion man-db \
         neovim git \
         rsync curl \
     && apt-get autoremove -y \
