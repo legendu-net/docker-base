@@ -31,7 +31,7 @@ docker run -d \
     --name ubuntu_b \
     --log-opt max-size=50m \
     --memory=$(($(head -n 1 /proc/meminfo | awk '{print $2}') * 4 / 5))k \
-    --cpus=$((`nproc` - 1)) \
+    --cpus=$(($(nproc) - 1)) \
     -e DOCKER_USER=$(id -un) \
     -e DOCKER_USER_ID=$(id -u) \
     -e DOCKER_PASSWORD=$(id -un) \
