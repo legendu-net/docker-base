@@ -16,12 +16,12 @@ to `/workdir` and `/home_host` in the container respectively.
 docker run -d \
     --name ubuntu_b \
     --log-opt max-size=50m \
-    -e DOCKER_USER=`id -un` \
-    -e DOCKER_USER_ID=`id -u` \
-    -e DOCKER_PASSWORD=`id -un` \
-    -e DOCKER_GROUP_ID=`id -g` \
-    -v `pwd`:/workdir \
-    -v `dirname $HOME`:/home_host \
+    -e DOCKER_USER=$(id -un) \
+    -e DOCKER_USER_ID=$(id -u) \
+    -e DOCKER_PASSWORD=$(id -un) \
+    -e DOCKER_GROUP_ID=$(id -g) \
+    -v $(pwd):/workdir \
+    -v $(dirname $HOME):/home_host \
     dclong/ubuntu_b
 ```
 The following command (*only works on Linux*) does the same as the above one 
@@ -32,12 +32,12 @@ docker run -d \
     --log-opt max-size=50m \
     --memory=$(($(head -n 1 /proc/meminfo | awk '{print $2}') * 4 / 5))k \
     --cpus=$((`nproc` - 1)) \
-    -e DOCKER_USER=`id -un` \
-    -e DOCKER_USER_ID=`id -u` \
-    -e DOCKER_PASSWORD=`id -un` \
-    -e DOCKER_GROUP_ID=`id -g` \
-    -v `pwd`:/workdir \
-    -v `dirname $HOME`:/home_host \
+    -e DOCKER_USER=$(id -un) \
+    -e DOCKER_USER_ID=$(id -u) \
+    -e DOCKER_PASSWORD=$(id -un) \
+    -e DOCKER_GROUP_ID=$(id -g) \
+    -v $(pwd):/workdir \
+    -v $(dirname $HOME):/home_host \
     dclong/ubuntu_b
 ```
 
