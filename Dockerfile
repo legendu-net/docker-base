@@ -24,5 +24,3 @@ ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 RUN mkdir -p /workdir && chmod 777 /workdir
 
 COPY scripts /scripts
-
-ENTRYPOINT ["/scripts/sys/init.sh"]
