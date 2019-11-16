@@ -1,1 +1,3 @@
-image: dclong/gitpod-svim
+image: dclong/jupyterhub-ds
+tasks:
+  - command: xinstall --no-sudo svim -ic
