@@ -4,6 +4,7 @@ RUN apt-get update -y \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y \
         sudo \
         software-properties-common apt-transport-https \
+        zip \
         tzdata locales \
         bash-completion man-db \
         neovim git \
