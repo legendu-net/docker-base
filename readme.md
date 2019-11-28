@@ -40,6 +40,7 @@ docker run -d \
     -v $(dirname $HOME):/home_host \
     dclong/ubuntu_b
 ```
+## [Log Information](http://www.legendu.net/en/blog/my-docker-images/#docker-container-logs)
 
 ## [Detailed Information](http://www.legendu.net/en/blog/my-docker-images/#list-of-images-and-detailed-information) 
 
