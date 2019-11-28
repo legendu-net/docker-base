@@ -22,7 +22,7 @@ docker run -d \
     -e DOCKER_GROUP_ID=$(id -g) \
     -v $(pwd):/workdir \
     -v $(dirname $HOME):/home_host \
-    dclong/ubuntu_b
+    dclong/ubuntu_b /command/to/run
 ```
 The following command (*only works on Linux*) does the same as the above one 
 except that it limits the use of CPU and memory.
@@ -38,7 +38,7 @@ docker run -d \
     -e DOCKER_GROUP_ID=$(id -g) \
     -v $(pwd):/workdir \
     -v $(dirname $HOME):/home_host \
-    dclong/ubuntu_b
+    dclong/ubuntu_b /command/to/run
 ```
 ## [Log Information](http://www.legendu.net/en/blog/my-docker-images/#docker-container-logs)
 
