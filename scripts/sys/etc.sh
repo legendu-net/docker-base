@@ -2,7 +2,7 @@
 
 function run_scripts_etc.usage() {
     cat << EOF
-Run scripts in /scripts/etc or /scripts/etc_post which are for automatic configurations in Docker container.
+Run scripts in /scripts/etc_pre or /scripts/etc_post which are for automatic configurations in Docker container.
 Syntax: run_scripts_etc [upper_index]
 Argument:
     upper_index: The maximum index of scripts to run.
