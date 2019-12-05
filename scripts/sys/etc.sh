@@ -2,7 +2,7 @@
 
 function run_scripts_etc.usage() {
     cat << EOF
-Run scripts in /scripts/etc which are for automatic configurations in Docker container.
+Run scripts in /scripts/etc_pre or /scripts/etc_post which are for automatic configurations in Docker container.
 Syntax: run_scripts_etc [upper_index]
 Argument:
     upper_index: The maximum index of scripts to run.
@@ -14,9 +14,10 @@ function run_scripts_etc() {
         run_scripts_etc.usage
         return 0
     fi
-    local upper_index=9${1:-999}
-    for script in $(ls /scripts/etc/[0-9][0-9][0-9]-*.sh); do
-        index=9${script:13:3}
+    local upper_index=9${2:-999}
+    for script in $(ls /scripts/etc_$1/[0-9][0-9][0-9]-*.sh); do
+        script=$(basename $script)
+        index=9${script:0:3}
         if [[ $index -le $upper_index ]]; then
             source $script
         fi
