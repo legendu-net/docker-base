@@ -15,6 +15,7 @@ function run_scripts_etc() {
         return 0
     fi
     local upper_index=9${2:-999}
+    local script
     for script in $(ls /scripts/etc_$1/[0-9][0-9][0-9]-*.sh); do
         local index=$(basename $script)
         index=9${script:0:3}
