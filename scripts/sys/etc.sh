@@ -18,7 +18,7 @@ function run_scripts_etc() {
     local script
     for script in $(ls /scripts/etc_$1/[0-9][0-9][0-9]-*.sh); do
         local index=$(basename $script)
-        index=9${script:0:3}
+        index=9${index:0:3}
         if [[ $index -le $upper_index ]]; then
             source $script
         fi
