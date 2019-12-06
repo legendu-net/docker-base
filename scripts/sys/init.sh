@@ -13,5 +13,6 @@ gpasswd -a $DOCKER_USER sudo
 
 # su -m $DOCKER_USER -c /scripts/launch.sh
 source /scripts/sys/launch.sh &
+sleep 5
 
 /scripts/sys/etc.sh post
