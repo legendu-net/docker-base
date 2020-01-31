@@ -1,7 +1,7 @@
 FROM ubuntu:19.04
 
 RUN apt-get update -y \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         sudo \
         software-properties-common apt-transport-https \
         zip \
