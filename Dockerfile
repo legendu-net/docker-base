@@ -7,7 +7,7 @@ RUN apt-get update -y \
         zip \
         tzdata locales \
         bash-completion man-db \
-        neovim git \
+        neovim git openssh-client \
         rsync curl \
     && apt-get autoremove -y \
     && apt-get clean -y
