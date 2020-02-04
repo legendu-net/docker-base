@@ -2,7 +2,7 @@ FROM ubuntu:19.04
 
 RUN apt-get update -y \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-        sudo \
+        sudo wajig \
         software-properties-common apt-transport-https \
         zip \
         tzdata locales \
