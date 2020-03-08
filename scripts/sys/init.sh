@@ -11,7 +11,7 @@ gpasswd -a $DOCKER_USER sudo
 
 /scripts/sys/etc.sh pre
 
-export HOME=/home/$DOCKER_USER
+export HOME=/home/$DOCKER_USER  # Do NOT remove!!
 source /scripts/sys/launch.sh 
 
 # /scripts/sys/etc.sh post
