@@ -11,6 +11,7 @@ gpasswd -a $DOCKER_USER sudo
 
 /scripts/sys/etc.sh pre
 
-# su -m $DOCKER_USER -c /scripts/launch.sh
+export HOME=/home/$DOCKER_USER
 source /scripts/sys/launch.sh 
+
 # /scripts/sys/etc.sh post
