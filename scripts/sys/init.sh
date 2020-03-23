@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Usage: /scripts/sys/init.sh [/scripts/to/launch.sh]
 
 # create a user
 DOCKER_USER=${DOCKER_USER:-dclong} 
@@ -12,6 +13,10 @@ gpasswd -a $DOCKER_USER sudo
 /scripts/sys/etc.sh pre
 
 export HOME=/home/$DOCKER_USER  # Do NOT remove!!
-source /scripts/sys/launch.sh 
+if [[ "$#" -gt 0 ]]; then
+    source "$@"
+else
+    source /scripts/sys/launch.sh 
+fi
 
 # /scripts/sys/etc.sh post
