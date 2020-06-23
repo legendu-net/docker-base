@@ -24,11 +24,11 @@ EOF
 }
 
 function init.create_user(){
-    expose DOCKER_USER=${DOCKER_USER:-dclong} 
-    expose DOCKER_USER_ID=${DOCKER_USER_ID:-9001} 
-    expose DOCKER_PASSWORD=${DOCKER_PASSWORD:-$DOCKER_USER} 
-    expose DOCKER_GROUP=${DOCKER_GROUP:-docker} 
-    expose DOCKER_GROUP_ID=${DOCKER_GROUP_ID:-9001}
+    export DOCKER_USER=${DOCKER_USER:-dclong} 
+    export DOCKER_USER_ID=${DOCKER_USER_ID:-9001} 
+    export DOCKER_PASSWORD=${DOCKER_PASSWORD:-$DOCKER_USER} 
+    export DOCKER_GROUP=${DOCKER_GROUP:-docker} 
+    export DOCKER_GROUP_ID=${DOCKER_GROUP_ID:-9001}
     /scripts/sys/create_user.sh $DOCKER_USER $DOCKER_USER_ID $DOCKER_PASSWORD $DOCKER_GROUP $DOCKER_GROUP_ID
     gpasswd -a $DOCKER_USER sudo
 }
