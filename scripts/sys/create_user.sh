@@ -1,15 +1,24 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function create_user.usage() {
     cat << EOF
-Create a new user.
-Syntax: create_user user user_id password group group_id
-Arguments:
-user: user name (which cannot be an empty string)
-user_id: user ID (which cannot be an empty string)
-password: password of the user (which cannot be an empty string)
-group: group name of the user (which cannot be an empty string)
-group_id: group ID (which cannot be an empty string)
+NAME
+    /scripts/sys/create_user - create user in the Docker container
+
+SYNTAX 
+    /scripts/sys/create_user.sh user user_id password group group_id
+
+ARGUMENTS
+    user: user name (which cannot be an empty string)
+    user_id: user ID (which cannot be an empty string)
+    password: Optional password (cannot be empty) of the user. 
+        If not provided, then the user name is used as the password.
+    group: group name of the user (which cannot be an empty string)
+    group_id: group ID (which cannot be an empty string)
+
+DESCRIPTION
+    Create a new user in the Docker container.
+
 EOF
 }
 
