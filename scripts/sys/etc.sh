@@ -6,9 +6,10 @@ NAME
     /scripts/sys/etc.sh - configuration for init
 
 SYNTAX 
-    /scripts/sys/etc.sh [upper_index]
+    /scripts/sys/etc.sh pre/post [upper_index]
 
 ARGUMENT
+    pre/post: Run scripts in /scripts/etc_pre or /scripts/etc_post respectively.
     upper_index: The maximum index of scripts to run.
 
 DESCRIPTION
