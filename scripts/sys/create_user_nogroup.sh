@@ -1,13 +1,22 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function create_user_nogroup.usage() {
     cat << EOF
-Create a new user with the group name "nogroup".
-Syntax: create_user_nogroup user user_id [password] 
-Arguments:
-user: user name
-user_id: user id
-password: Optional password of the user. If not provided, then the user name is used as the password.
+NAME
+    /scripts/sys/create_user_nogroup.sh - create user in the Docker container
+
+SYNTAX 
+    /scripts/sys/create_user_nogroup.sh user user_id [password] 
+
+ARGUMENTS
+    user: user name (which cannot be an empty string)
+    user_id: user ID (which cannot be an empty string)
+    password: Optional password (cannot be empty) of the user. 
+        If not provided, then the user name is used as the password.
+
+DESCRIPTION
+    Create a new user with the group name "nogroup".
+
 EOF
 }
 
