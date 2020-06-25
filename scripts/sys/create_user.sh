@@ -43,7 +43,7 @@ function create_user() {
     if [[ "$(getent group $group)" == "" ]]; then
         groupadd -o -g $group_id $group
     fi
-    id $user
+    id $user > /dev/null 2>&1
     if [[ $? == 0 ]]; then
         echo "The user $user already exists!"
         return 0
