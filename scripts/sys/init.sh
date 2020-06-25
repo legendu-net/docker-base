@@ -4,6 +4,7 @@ function init.usage(){
     cat << EOF
 NAME
     /scripts/sys/init.sh - init (PID 0) process in the Docker container
+    
 SYNTAX 
     /scripts/sys/init.sh [-u/--switch-user] [-e/--execute] [/script/to/run.sh]
 
