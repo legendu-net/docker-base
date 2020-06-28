@@ -9,6 +9,7 @@ RUN apt-get update -y \
         bash-completion man-db \
         neovim git openssh-client \
         rsync curl \
+    && echo "Set disable_coredump false" >> /etc/sudo.conf \
     && apt-get autoremove -y \
     && apt-get clean -y
 
