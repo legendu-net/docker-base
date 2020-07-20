@@ -61,13 +61,13 @@ function init(){
     /scripts/sys/etc.sh pre
     export HOME=/home/$DOCKER_USER  # Do NOT remove!!
     local script=/scripts/sys/launch.sh
-    if [ ${#positional[@]} -gt 0 ]; then
+    if [[ ${#positional[@]} -gt 0 ]]; then
         script="${positional[@]}"
     fi
-    if [ $switch_user == YES ]; then
+    if [[ "$switch_user" == YES ]]; then
         su $DOCKER_USER -c "$script"
     else
-        if [ $execute == YES ]; then
+        if [[ "$execute" == YES ]]; then
             "$script"
         else
             source "$script"
@@ -76,7 +76,7 @@ function init(){
     # /scripts/sys/etc.sh post
 }
 
-if [ "$0" == ${BASH_SOURCE[0]} ]; then
+if [[ "$0" == ${BASH_SOURCE[0]} ]]; then
     init $@
 fi
 
