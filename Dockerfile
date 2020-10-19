@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 
 RUN apt-get update -y \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-        sudo wajig pkg-config \
+        sudo wajig \
         software-properties-common apt-transport-https \
         file zip \
         tzdata locales \
