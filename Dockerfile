@@ -12,7 +12,8 @@ RUN apt-get update -y \
         rsync curl \
     && echo "Set disable_coredump false" >> /etc/sudo.conf \
     && apt-get autoremove -y \
-    && apt-get clean -y
+    && apt-get clean -y \
+    && rm -rf /var/lib/apt/lists/*
 
 # timezone
 ARG TZ=America/Los_Angeles
