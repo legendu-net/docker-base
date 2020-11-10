@@ -1,5 +1,5 @@
 # NAME: dclong/ubuntu_b
-FROM debian:testing-slim
+FROM debian:testing
 
 RUN apt-get update -y \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
