@@ -58,8 +58,8 @@ function init(){
         esac
     done
     init.create_user
-    /scripts/sys/etc.sh pre
     export HOME=/home/$DOCKER_USER  # Do NOT remove!!
+    /scripts/sys/etc.sh pre
     local script=/scripts/sys/launch.sh
     if [[ ${#positional[@]} -gt 0 ]]; then
         script="${positional[@]}"
