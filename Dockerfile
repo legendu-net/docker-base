@@ -21,7 +21,8 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
     && echo $TZ > /etc/timezone
 
 # locale
-RUN locale-gen en_US.UTF-8
+COPY settings/locale.gen /etc/locale.gen
+RUN locale-gen
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 
 # create /workdir
