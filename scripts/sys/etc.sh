@@ -30,6 +30,7 @@ function run_scripts_etc() {
         local index=$(basename $script)
         index=9${index:0:3}
         if [[ $index -le $upper_index ]]; then
+            echo "Sourcing the script $script ..."
             source $script
         fi
     done
