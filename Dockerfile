@@ -13,7 +13,7 @@ RUN apt-get update -y \
     && echo "Set disable_coredump false" >> /etc/sudo.conf \
     && apt-get autoremove -y \
     && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
 
 # timezone
 ARG TZ=America/Los_Angeles
