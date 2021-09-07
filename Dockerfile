@@ -1,5 +1,5 @@
 # NAME: dclong/ubuntu_b
-FROM ubuntu:20.04
+FROM ubuntu:21.10
 
 RUN apt-get update -y \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
