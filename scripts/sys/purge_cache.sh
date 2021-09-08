@@ -1,11 +1,14 @@
 #!/bin/bash
 
 # purge pip cache
-if [[ "$(which pip3)" != "" ]]; then
-    pip3 cache purge -qqq
+if [[ "$(which python)" != "" ]]; then
+    python -m pip cache purge -qqq
 fi
-if [[ "$(which pip)" != "" ]]; then
-    pip cache purge -qqq
+if [[ "$(which python3)" != "" ]]; then
+    python3 -m pip cache purge -qqq
+fi
+if [[ "$(which python3.7)" != "" ]]; then
+    python3.7 -m pip cache purge -qqq
 fi
 
 # purge apt-get cache
