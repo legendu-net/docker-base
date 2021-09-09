@@ -1,25 +1,21 @@
 #!/bin/bash
 
-# purge pip cache
-if [[ "$(which python)" != "" ]]; then
-    python -m pip cache purge -qqq
-fi
-if [[ "$(which python3)" != "" ]]; then
-    python3 -m pip cache purge -qqq
-fi
-if [[ "$(which python3.7)" != "" ]]; then
-    python3.7 -m pip cache purge -qqq
-fi
-
-# purge npm cache 
-if [[ "$(which npm)" != "" ]]; then
-    npm cache clean --force
-fi
-
 # purge apt-get cache
 if [[ "$(which apt-get)" != "" ]]; then
     apt-get autoremove -y
     apt-get clean -y
+fi
+
+# purge pip cache
+for cmd in python python3 python3.7 do
+    if [[ "$(which $cmd)" != "" ]]; then
+        $cmd -m pip cache purge -qqq
+    fi
+done
+
+# purge npm cache 
+if [[ "$(which npm)" != "" ]]; then
+    npm cache clean --force
 fi
 
 # purge cargo cache
