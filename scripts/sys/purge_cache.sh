@@ -7,7 +7,7 @@ if [[ "$(which apt-get)" != "" ]]; then
 fi
 
 # purge pip cache
-for cmd in python python3 python3.7 do
+for cmd in python python3 python3.7; do
     if [[ "$(which $cmd)" != "" ]]; then
         $cmd -m pip cache purge -qqq
     fi
