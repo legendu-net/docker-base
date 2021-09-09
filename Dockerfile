@@ -1,6 +1,8 @@
 # NAME: dclong/ubuntu_b
 FROM ubuntu:20.04
 
+WORKDIR $HOME
+RUN mkdir -p /workdir && chmod 777 /workdir
 COPY scripts /scripts
 
 RUN apt-get update -y \
@@ -24,6 +26,5 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
 RUN locale-gen en_US.UTF-8
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 
-# create /workdir
-RUN mkdir -p /workdir && chmod 777 /workdir
+
 
