@@ -12,7 +12,7 @@ if [[ "$(which python3.7)" != "" ]]; then
 fi
 
 # purge npm cache 
-if [[ "$(which python)" != "" ]]; then
+if [[ "$(which npm)" != "" ]]; then
     npm cache clean --force
 fi
 
