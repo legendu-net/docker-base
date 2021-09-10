@@ -38,12 +38,12 @@ jobs:
           title: Merge dev into debian
           branch: dev
           assignees: dclong  
-  pr_to_2110:
+  pr_to_21.10:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: 21.10
+          ref: "21.10"
       - name: Reset debian branch with dev changes
         run: |
           git fetch origin dev:dev
