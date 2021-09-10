@@ -1,6 +1,8 @@
 # NAME: dclong/ubuntu_b
 FROM debian:testing
 
+WORKDIR /root
+RUN mkdir -p /workdir && chmod 777 /workdir && ln -svf /workdir /workspace
 COPY scripts /scripts
 
 RUN apt-get update -y \
@@ -25,6 +27,5 @@ COPY settings/locale.gen /etc/locale.gen
 RUN locale-gen
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 
-# create /workdir
-RUN mkdir -p /workdir && chmod 777 /workdir
+
 
