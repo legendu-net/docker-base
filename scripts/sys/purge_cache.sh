@@ -28,6 +28,6 @@ elif [[ "$(which /root/.cargo/bin/cargo-cache)" != "" ]]; then
 fi
 
 # manual remove temp dirs
-rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
+rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/* ~/.cache/
 
 exit 0
