@@ -21,6 +21,10 @@ fi
 # purge cargo cache
 if [[ "$(which cargo-cache)" != "" ]]; then
     cargo-cache --autoclean
+elif [[ "$(which ~/.cargo/bin/cargo-cache)" != "" ]]; then
+    ~/.cargo/bin/cargo-cache --autoclean
+elif [[ "$(which /root/.cargo/bin/cargo-cache)" != "" ]]; then
+    /root/.cargo/bin/cargo-cache --autoclean
 fi
 
 # manual remove temp dirs
