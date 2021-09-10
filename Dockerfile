@@ -1,6 +1,10 @@
 # NAME: dclong/ubuntu_b
 FROM ubuntu:21.10
 
+WORKDIR /root
+RUN mkdir -p /workdir && chmod 777 /workdir && ln -svf /workdir /workspace
+COPY scripts /scripts
+
 RUN apt-get update -y \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         sudo \
@@ -11,9 +15,7 @@ RUN apt-get update -y \
         neovim git openssh-client \
         rsync curl \
     && echo "Set disable_coredump false" >> /etc/sudo.conf \
-    && apt-get autoremove -y \
-    && apt-get clean -y \
-    && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
+    && /scripts/sys/purge_cache.sh
 
 # timezone
 ARG TZ=America/Los_Angeles
@@ -24,7 +26,5 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
 RUN locale-gen en_US.UTF-8
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 
-# create /workdir
-RUN mkdir -p /workdir && chmod 777 /workdir
 
-COPY scripts /scripts
+
