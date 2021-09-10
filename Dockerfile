@@ -1,7 +1,7 @@
 # NAME: dclong/ubuntu_b
 FROM ubuntu:20.04
 
-WORKDIR $HOME
+WORKDIR /root
 RUN mkdir -p /workdir && chmod 777 /workdir && ln -svf /workdir /workspace
 COPY scripts /scripts
 
