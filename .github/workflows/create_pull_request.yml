@@ -17,7 +17,7 @@ jobs:
       - name: Create pull request from dev to main
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.GITHUBACTIONS }} 
+          token: ${{ secrets.GITHUB_TOKEN }} 
           title: Merge dev into main
           branch: dev
           assignees: dclong  
@@ -34,11 +34,11 @@ jobs:
       - name: Create pull request from dev to debian
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.GITHUBACTIONS }} 
+          token: ${{ secrets.GITHUB_TOKEN }} 
           title: Merge dev into debian
           branch: dev
           assignees: dclong  
-  pr_to_21.10:
+  pr_to_2110:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -51,7 +51,7 @@ jobs:
       - name: Create pull request from dev to debian
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.GITHUBACTIONS }} 
+          token: ${{ secrets.GITHUB_TOKEN }} 
           title: Merge dev into 21.10
           branch: dev
           assignees: dclong
