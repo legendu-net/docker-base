@@ -38,7 +38,7 @@ jobs:
           title: Merge dev into debian
           branch: dev
           assignees: dclong  
-  pr_to_21.10:
+  pr_to_2110:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
