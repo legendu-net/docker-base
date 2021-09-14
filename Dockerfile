@@ -2,7 +2,7 @@
 FROM ubuntu:20.04
 
 WORKDIR /root
-RUN mkdir -p /workdir && chmod 777 /workdir && ln -svf /workdir /workspace
+RUN mkdir -p /workdir && chmod 777 /workdir
 COPY scripts /scripts
 
 RUN apt-get update -y \
