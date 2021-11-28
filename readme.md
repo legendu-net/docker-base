@@ -1,4 +1,4 @@
-# dclong/ubuntu_b [@DockerHub](https://hub.docker.com/r/dclong/ubuntu_b/) | [@GitHub](https://github.com/dclong/docker-ubuntu_b)
+# dclong/base [@DockerHub](https://hub.docker.com/r/dclong/base/) | [@GitHub](https://github.com/dclong/docker-base)
 
 Ubuntu with basic utils in Docker.
 
