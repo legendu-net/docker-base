@@ -1,5 +1,5 @@
 # NAME: dclong/base
-FROM centos:7.6.1810
+FROM ubuntu:21.10
 
 WORKDIR /root
 RUN mkdir -p /workdir && chmod 777 /workdir
