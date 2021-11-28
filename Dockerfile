@@ -1,4 +1,4 @@
-# NAME: dclong/ubuntu_b
+# NAME: dclong/base
 FROM ubuntu:20.04
 
 WORKDIR /root
