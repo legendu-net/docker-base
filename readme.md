@@ -5,7 +5,7 @@ Base Docker images.
 ## Prerequisite
 You need to [install Docker](http://www.legendu.net/en/blog/docker-installation/) before you use this Docker image.
 
-## Tags
+## Branches and Corresponding Linux Distributions and Docker Images
 
 <table style="width:100%">
   <tr>
