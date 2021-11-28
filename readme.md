@@ -7,12 +7,6 @@ You need to [install Docker](http://www.legendu.net/en/blog/docker-installation/
 
 ## Tags
 
-<style>
-table, th, td {
-  border:1px solid black;
-}
-</style>
-
 <table style="width:100%">
   <tr>
     <th>Branch</th>
