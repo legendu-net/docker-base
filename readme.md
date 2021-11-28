@@ -5,6 +5,46 @@ Base Docker images.
 ## Prerequisite
 You need to [install Docker](http://www.legendu.net/en/blog/docker-installation/) before you use this Docker image.
 
+## Tags
+
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+
+<table style="width:100%">
+  <tr>
+    <th>Branch</th>
+    <th>Linux</th>
+    <th>Docker</th>
+  </tr>
+  <tr>
+    <td>main</td>
+    <td>Ubuntu 20.04</td>
+    <td>dclong/base</td>
+  </tr>
+  <tr>
+    <td>dev</td>
+    <td>Ubuntu 20.04</td>
+    <td>dclong/base:next</td>
+  </tr>
+  <tr>
+    <td>21.10</td>
+    <td>Ubuntu 21.10</td>
+    <td>dclong/base:21.10</td>
+  </tr>
+  <tr>
+    <td>debian</td>
+    <td>Debian Testing</td>
+    <td>dclong/base:debian</td>
+  </tr>
+  <tr>
+    <td>centos7.6</td>
+    <td>CentOS 7.6</td>
+    <td>dclong/base:centos7.6</td>
+  </tr>
+</table>
 
 ## Usage in Linux/Unix
 
