@@ -1,6 +1,6 @@
 # dclong/base [@DockerHub](https://hub.docker.com/r/dclong/base/) | [@GitHub](https://github.com/dclong/docker-base)
 
-Ubuntu with basic utils in Docker.
+Base Docker images.
 
 ## Prerequisite
 You need to [install Docker](http://www.legendu.net/en/blog/docker-installation/) before you use this Docker image.
@@ -26,7 +26,7 @@ docker run -it --init \
     -e DOCKER_GROUP_ID=$(id -g) \
     -v $(pwd):/workdir \
     -v $(dirname $HOME):/home_host \
-    dclong/ubuntu_b /bin/bash --init-file /scripts/sys/user.sh
+    dclong/base /bin/bash --init-file /scripts/sys/user.sh
 ```
 The following command (*only works on Linux*) does the same as the above one 
 except that it limits the use of CPU and memory.
@@ -42,7 +42,7 @@ docker run -it --init \
     -e DOCKER_GROUP_ID=$(id -g) \
     -v $(pwd):/workdir \
     -v $(dirname $HOME):/home_host \
-    dclong/ubuntu_b /bin/bash --init-file /scripts/sys/user.sh
+    dclong/base /bin/bash --init-file /scripts/sys/user.sh
 ```
 ## [Log Information](http://www.legendu.net/en/blog/my-docker-images/#docker-container-logs)
 
