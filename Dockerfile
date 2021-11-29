@@ -5,7 +5,7 @@ WORKDIR /root
 RUN mkdir -p /workdir && chmod 777 /workdir
 COPY scripts /scripts
 
-RUN yum install -y
+RUN yum install -y \
         sudo \
         file zip \
         tzdata \
