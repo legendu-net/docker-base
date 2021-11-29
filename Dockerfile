@@ -7,7 +7,7 @@ COPY scripts /scripts
 
 RUN yum install -y \
         sudo \
-        file zip \
+        file zip which \
         tzdata \
         man-db \
         neovim git openssh-client \
