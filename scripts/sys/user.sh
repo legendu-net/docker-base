@@ -61,4 +61,4 @@ function init(){
 }
 
 init $@
-su chdu
+su $DOCKER_USER
