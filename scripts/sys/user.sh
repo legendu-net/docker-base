@@ -29,7 +29,7 @@ function init.create_user(){
     export DOCKER_GROUP=${DOCKER_GROUP:-docker} 
     export DOCKER_GROUP_ID=${DOCKER_GROUP_ID:-9001}
     /scripts/sys/create_user.sh $DOCKER_USER $DOCKER_USER_ID $DOCKER_PASSWORD $DOCKER_GROUP $DOCKER_GROUP_ID
-    gpasswd -a $DOCKER_USER sudo
+    gpasswd -a $DOCKER_USER wheel
 }
 
 function init(){
