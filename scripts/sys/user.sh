@@ -5,12 +5,10 @@ NAME
     
 SYNTAX 
     /scripts/sys/init.sh [-u/--switch-user] [-e/--execute] [/script/to/run.sh]
-
 ARGUMENTS
     -u/--switch-user: Switch to the specified (and created) Docker user and EXECUTE the specified script.
     -e/--execute: Execute (instead of source in) the specified script.
     Positional Argument(s): Path (by default, /scripts/sys/launch.sh) to the script to execute or source in.
-
 DESCRIPTION
     This is the init shell process inside the Docker container.
     The main purpose of this shell script is to create the specified Docker user
@@ -18,16 +16,16 @@ DESCRIPTION
     While this is the preferred way of starting other processes in the Docker container,
     it is perfectly OK not to use this script if you do not want to create a new user inside the Docker container 
     and just want to use root (might run into various permission issues) to run processes.
-
 EOF
 }
 
+DOCKER_USER=${DOCKER_USER:-dclong}
+
 function init.create_user(){
-    export DOCKER_USER=${DOCKER_USER:-dclong} 
-    export DOCKER_USER_ID=${DOCKER_USER_ID:-9001} 
-    export DOCKER_PASSWORD=${DOCKER_PASSWORD:-$DOCKER_USER} 
-    export DOCKER_GROUP=${DOCKER_GROUP:-docker} 
-    export DOCKER_GROUP_ID=${DOCKER_GROUP_ID:-9001}
+    local DOCKER_USER_ID=${DOCKER_USER_ID:-9001} 
+    local DOCKER_PASSWORD=${DOCKER_PASSWORD:-$DOCKER_USER} 
+    local DOCKER_GROUP=${DOCKER_GROUP:-docker} 
+    local DOCKER_GROUP_ID=${DOCKER_GROUP_ID:-9001}
     /scripts/sys/create_user.sh $DOCKER_USER $DOCKER_USER_ID $DOCKER_PASSWORD $DOCKER_GROUP $DOCKER_GROUP_ID
     gpasswd -a $DOCKER_USER wheel
 }
@@ -61,4 +59,4 @@ function init(){
 }
 
 init $@
-su chdu
+su $DOCKER_USER
