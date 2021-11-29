@@ -60,7 +60,7 @@ docker run -it --init \
     -e DOCKER_GROUP_ID=$(id -g) \
     -v $(pwd):/workdir \
     -v $(dirname $HOME):/home_host \
-    dclong/base /bin/bash --init-file /scripts/sys/user.sh
+    dclong/base /scripts/sys/init.sh -u -e /bin/bash
 ```
 The following command (*only works on Linux*) does the same as the above one 
 except that it limits the use of CPU and memory.
@@ -76,7 +76,7 @@ docker run -it --init \
     -e DOCKER_GROUP_ID=$(id -g) \
     -v $(pwd):/workdir \
     -v $(dirname $HOME):/home_host \
-    dclong/base /bin/bash --init-file /scripts/sys/user.sh
+    dclong/base /scripts/sys/init.sh -u -e /bin/bash
 ```
 ## [Log Information](http://www.legendu.net/en/blog/my-docker-images/#docker-container-logs)
 
