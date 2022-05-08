@@ -1,5 +1,5 @@
 # NAME: dclong/base
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 WORKDIR /root
 RUN mkdir -p /workdir && chmod 777 /workdir
