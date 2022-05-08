@@ -7,7 +7,7 @@ jobs:
   pr_to_main:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: main
       - name: Reset main branch with dev changes
@@ -15,7 +15,7 @@ jobs:
           git fetch origin dev:dev
           git reset --hard dev
       - name: Create pull request from dev to main
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ secrets.GITHUBACTIONS }} 
           title: Merge dev into main
