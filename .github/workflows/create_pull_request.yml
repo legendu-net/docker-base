@@ -7,7 +7,7 @@ jobs:
   pr_to_main:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: main
       - name: Reset main branch with dev changes
@@ -15,7 +15,7 @@ jobs:
           git fetch origin dev:dev
           git reset --hard dev
       - name: Create pull request from dev to main
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ secrets.GITHUBACTIONS }} 
           title: Merge dev into main
@@ -38,20 +38,20 @@ jobs:
 #           title: Merge dev into debian
 #           branch: dev
 #           assignees: dclong  
-  pr_to_2110:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: "21.10"
-      - name: Reset debian branch with dev changes
-        run: |
-          git fetch origin dev:dev
-          git reset --hard dev
-      - name: Create pull request from dev to debian
-        uses: peter-evans/create-pull-request@v3
-        with:
-          token: ${{ secrets.GITHUBACTIONS }} 
-          title: Merge dev into 21.10
-          branch: dev
-          assignees: dclong
+#  pr_to_2110:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v2
+#        with:
+#          ref: "21.10"
+#      - name: Reset debian branch with dev changes
+#        run: |
+#          git fetch origin dev:dev
+#          git reset --hard dev
+#      - name: Create pull request from dev to debian
+#        uses: peter-evans/create-pull-request@v3
+#        with:
+#          token: ${{ secrets.GITHUBACTIONS }} 
+#          title: Merge dev into 21.10
+#          branch: dev
+#          assignees: dclong
