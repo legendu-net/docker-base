@@ -1,6 +1,7 @@
 # NAME: dclong/base
 FROM ubuntu:22.04
 
+SHELL ["/bin/bash", "-O", "extglob", "-c"]
 RUN mkdir -p /workdir && chmod 777 /workdir
 WORKDIR /workdir
 COPY scripts /scripts
