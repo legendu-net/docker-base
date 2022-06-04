@@ -9,7 +9,7 @@ COPY scripts /scripts
 RUN apt-get update -y \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         sudo \
-        pkg-config software-properties-common apt-transport-https \
+        software-properties-common apt-transport-https \
         file zip \
         tzdata locales \
         bash-completion man-db \
