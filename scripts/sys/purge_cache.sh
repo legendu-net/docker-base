@@ -13,6 +13,11 @@ for cmd in python python3 python3.7; do
     fi
 done
 
+# purge conda cache
+if [[ "$(which conda)" != "" ]]; then
+    conda clean --all --yes
+fi
+
 # purge npm cache 
 if [[ "$(which npm)" != "" ]]; then
     npm cache clean --force
