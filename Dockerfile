@@ -6,6 +6,7 @@ RUN mkdir -p /workdir && chmod 777 /workdir
 WORKDIR /workdir
 COPY scripts /scripts
 
+ARG URL=https://github.com/legendu-net/icon/releases
 RUN apt-get update -y \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         sudo \
@@ -15,7 +16,9 @@ RUN apt-get update -y \
         bash-completion man-db \
         neovim git openssh-client \
         rsync curl \
-    && curl -sSL https://github.com/legendu-net/icon/releases/download/v0.1.0/icon_linux_amd64 -o /usr/local/bin/icon \
+    && VERSION=$(basename $(curl -sL -o /dev/null -w %{url_effective} $URL/latest)) \
+    && curl -sSL $URL/download/$VERSION/icon-$VERSION-linux-amd64.tar.gz -o /tmp/icon.tar.gz \
+    && tar zxvf /tmp/icon.tar.gz -C /usr/local/bin/ \
     && chmod +x /usr/local/bin/icon \
     && echo "Set disable_coredump false" >> /etc/sudo.conf \
     && /scripts/sys/purge_cache.sh
