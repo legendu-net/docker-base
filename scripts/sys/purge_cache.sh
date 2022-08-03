@@ -34,6 +34,14 @@ elif [[ -f ~/.cargo/bin/cargo-cache ]]; then
     ~/.cargo/bin/cargo-cache --autoclean
 fi
 
+# purge Golang caches
+if [[ "$GOPATH" != "" ]] && [[ -d "$GOPATH/pkg/mod/" ]]; then
+    rm -rf "$GOPATH/pkg/mod/*"
+fi
+if [[ -d "$HOME/go/pkg/mod/" ]]; then
+    rm -rf "$HOME/go/pkg/mod/"
+fi
+
 # manual remove temp dirs
 rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/* ~/.cache/
 
