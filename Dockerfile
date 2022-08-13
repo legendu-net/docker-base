@@ -1,5 +1,5 @@
 # NAME: dclong/base
-FROM ubuntu:22.04
+FROM debian:testing
 
 SHELL ["/bin/bash", "-O", "extglob", "-c"]
 RUN mkdir -p /workdir && chmod 777 /workdir
@@ -25,5 +25,6 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
     && echo $TZ > /etc/timezone
 
 # locale
-RUN locale-gen en_US.UTF-8
+COPY settings/locale.gen /etc/locale.gen
+RUN locale-gen
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
