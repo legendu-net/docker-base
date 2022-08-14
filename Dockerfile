@@ -25,6 +25,6 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
     && echo $TZ > /etc/timezone
 
 # locale
-COPY settings/locale.gen /etc/locale.gen
+#COPY settings/locale.gen /etc/locale.gen
 RUN locale-gen
 ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
