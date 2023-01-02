@@ -13,9 +13,10 @@ RUN apt-get update -y \
         file zip \
         tzdata locales \
         bash-completion man-db \
-        neovim git openssh-client \
+        git openssh-client \
         rsync curl \
     && curl -sSL https://raw.githubusercontent.com/legendu-net/icon/main/install_icon.sh | bash \
+    && icon neovim -iy \
     && echo "Set disable_coredump false" >> /etc/sudo.conf \
     && /scripts/sys/purge_cache.sh
 
