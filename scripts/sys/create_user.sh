@@ -50,6 +50,7 @@ function create_user() {
     fi
     # the -l option below is to avoid huge lastlog file
     useradd -oml -u $user_id -g $group -d /home/$user -s /bin/bash -c "$user" $user
+    su $user -c "mkdir -p ~/.local/bin/"
     echo $user:$password | chpasswd
 }
 
