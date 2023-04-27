@@ -33,7 +33,7 @@ function create_user() {
     fi
     local user=$1
     local user_id=$2
-    local password=$3
+    local password="$3"
     local group=$4
     local group_id=$5
     if [[ $user == "" || $user_id == "" || $password == "" || $group == "" || $group_id == "" ]]; then 
