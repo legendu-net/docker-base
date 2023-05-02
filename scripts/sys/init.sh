@@ -25,13 +25,13 @@ EOF
 }
 
 function init.create_user(){
-    export DOCKER_USER=${DOCKER_USER:-dclong} 
-    export DOCKER_USER_ID=${DOCKER_USER_ID:-9001} 
-    export DOCKER_PASSWORD=${DOCKER_PASSWORD:-$DOCKER_USER} 
-    export DOCKER_GROUP=${DOCKER_GROUP:-docker} 
-    export DOCKER_GROUP_ID=${DOCKER_GROUP_ID:-9001}
-    /scripts/sys/create_user.sh $DOCKER_USER $DOCKER_USER_ID "$DOCKER_PASSWORD" $DOCKER_GROUP $DOCKER_GROUP_ID
-    gpasswd -a $DOCKER_USER sudo
+    export DOCKER_USER="${DOCKER_USER:-dclong}"
+    export DOCKER_USER_ID="${DOCKER_USER_ID:-9001}"
+    export DOCKER_PASSWORD="${DOCKER_PASSWORD:-$DOCKER_USER}"
+    export DOCKER_GROUP="${DOCKER_GROUP:-docker}"
+    export DOCKER_GROUP_ID="${DOCKER_GROUP_ID:-9001}"
+    /scripts/sys/create_user.sh "$DOCKER_USER" "$DOCKER_USER_ID" "$DOCKER_PASSWORD" "$DOCKER_GROUP" "$DOCKER_GROUP_ID"
+    gpasswd -a "$DOCKER_USER" sudo
 }
 
 function init(){
@@ -65,7 +65,7 @@ function init(){
         script="${positional[@]}"
     fi
     if [[ "$switch_user" == YES ]]; then
-        su $DOCKER_USER -c "$script"
+        su "$DOCKER_USER" -c "$script"
     else
         if [[ "$execute" == YES ]]; then
             "$script"
@@ -77,6 +77,5 @@ function init(){
 }
 
 if [[ "$0" == ${BASH_SOURCE[0]} ]]; then
-    init $@
+    init "$@"
 fi
-
