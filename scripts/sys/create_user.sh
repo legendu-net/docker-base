@@ -71,5 +71,5 @@ function create_user() {
 }
 
 if [[ "$0" == ${BASH_SOURCE[0]} ]]; then
-    create_user $@
+    create_user "$@"
 fi

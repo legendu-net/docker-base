@@ -21,21 +21,21 @@ EOF
 }
 
 function create_user_docker() {
-    if [[ $1 == "-h" ]]; then
+    if [[ "$1" == "-h" ]]; then
         create_user_docker.usage
         return 0
     fi
     if [[ $# < 2 || $# > 3 ]]; then
-        create_user_docker.usage
+        echo "2 or 3 arguments are required while $# were provided!"
         return 1
     fi
-    local user=$1
-    local user_id=$2
+    local user="$1"
+    local user_id="$2"
     local group=docker
-    local password=${4:-$user}
-    /scripts/sys/create_user_group.sh $user $user_id $group "$password"
+    local password="${3:-$user}"
+    /scripts/sys/create_user_group.sh "$user" "$user_id" "$group" "$password"
 }
 
 if [[ "$0" == ${BASH_SOURCE[0]} ]]; then
-    create_user_docker $@
+    create_user_docker "$@"
 fi
