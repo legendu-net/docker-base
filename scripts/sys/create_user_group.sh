@@ -22,22 +22,22 @@ EOF
 }
 
 function create_user_group() {
-    if [[ $1 == "-h" ]]; then
+    if [[ "$1" == "-h" ]]; then
         create_user_group.usage
         return 0
     fi
     if [[ $# < 3 || $# > 4 ]]; then
-        create_user_group.usage
+        echo "3 or 4 arguments are required while $# were provided!"
         return 1
     fi
-    local user=$1
-    local user_id=$2
-    local group=$3
-    local group_id=$(getent group $group | cut -d: -f3)
-    local password=${4:-$user}
-    /scripts/sys/create_user.sh $user $user_id $password $group $group_id
+    local user="$1"
+    local user_id="$2"
+    local group="$3"
+    local group_id="$(getent group $group | cut -d: -f3)"
+    local password="${4:-$user}"
+    /scripts/sys/create_user.sh "$user" "$user_id" "$password" "$group" "$group_id"
 }
 
 if [[ "$0" == ${BASH_SOURCE[0]} ]]; then
-    create_user_group $@
+    create_user_group "$@"
 fi
