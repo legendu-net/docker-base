@@ -28,16 +28,32 @@ function create_user() {
         return 0
     fi
     if [[ $# != 5 ]]; then
-        create_user.usage
+        echo "5 arguments are required while $# were provided!"
         return 5
     fi
-    local user=$1
-    local user_id=$2
-    local password=$3
-    local group=$4
-    local group_id=$5
-    if [[ $user == "" || $user_id == "" || $password == "" || $group == "" || $group_id == "" ]]; then 
-        create_user.usage
+    local user="$1"
+    local user_id="$2"
+    local password="$3"
+    local group="$4"
+    local group_id="$5"
+    if [[ ! "$user" =~ ^[a-zA-Z]+[a-zA-Z0-9]*$ ]]; then 
+        echo "'$user' is invalid for the user name (1st) argument!"
+        return 1
+    fi
+    if [[ ! "$user_id" =~ ^[0-9]+$ ]]; then 
+        echo "'$user_id' is invalid for the user id (2nd) argument!"
+        return 1
+    fi
+    if [[ "$password" == "" ]]; then 
+        echo "'$password' is invalid for the user password (3rd) argument!"
+        return 1
+    fi
+    if [[ ! "$group" =~ ^[a-zA-Z]+[a-zA-Z0-9]*$ ]]; then 
+        echo "'$group' is invalid for the user group name (4th) argument!"
+        return 1
+    fi
+    if [[ ! "$group_id" =~ ^[0-9]+$ ]]; then 
+        echo "'$group_id' is invalid for the user group id (5th) argument!"
         return 1
     fi
     if [[ "$(getent group $group)" == "" ]]; then
@@ -51,9 +67,9 @@ function create_user() {
     # the -l option below is to avoid huge lastlog file
     useradd -oml -u $user_id -g $group -d /home/$user -s /bin/bash -c "$user" $user
     su $user -c "mkdir -p ~/.local/bin/"
-    echo $user:$password | chpasswd
+    echo $user:"$password" | chpasswd
 }
 
 if [[ "$0" == ${BASH_SOURCE[0]} ]]; then
-    create_user $@
+    create_user "$@"
 fi
