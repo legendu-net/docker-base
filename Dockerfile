@@ -1,7 +1,10 @@
 # NAME: dclong/base
 FROM debian:testing
 
+# shell
 SHELL ["/bin/bash", "-O", "extglob", "-c"]
+ENV HISTTIMEFORMAT="[%F %T %z]  "
+
 RUN mkdir -p /workdir && chmod 777 /workdir
 WORKDIR /workdir
 COPY scripts /scripts
