@@ -1,5 +1,41 @@
 #!/usr/bin/env bash
 
+function scripts_etc.usage() {
+    cat << EOF
+NAME
+    scripts_etc - configuration for init
+
+SYNTAX 
+    scripts_etc pre/post [upper_index]
+
+ARGUMENT
+    pre/post: Run scripts in /scripts/etc_pre or /scripts/etc_post respectively.
+    upper_index: The maximum index of scripts to run.
+
+DESCRIPTION
+    Run scripts in /scripts/etc_pre or /scripts/etc_post 
+    which are for automatic configurations in Docker container.
+
+EOF
+}
+
+function scripts_etc() {
+    if [ "$1" == "-h" ]; then
+        scripts_etc.usage
+        return 0
+    fi
+    local upper_index=9${2:-999}
+    local script
+    for script in $(ls /scripts/etc_$1/[0-9][0-9][0-9]-*.sh 2> /dev/null); do
+        local index=$(basename $script)
+        index=9${index:0:3}
+        if [[ $index -le $upper_index ]]; then
+            echo "Sourcing the script $script ..."
+            source $script
+        fi
+    done
+}
+
 function init.usage(){
     cat << EOF
 NAME
@@ -59,7 +95,7 @@ function init(){
     done
     init.create_user
     export HOME=/home/$DOCKER_USER  # Do NOT remove!!
-    /scripts/sys/etc.sh pre
+    scripts_etc pre
     local script=/scripts/sys/launch.sh
     if [[ ${#positional[@]} -gt 0 ]]; then
         script="${positional[@]}"
