@@ -1,5 +1,5 @@
 # NAME: dclong/base
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 # shell
 SHELL ["/bin/bash", "-O", "extglob", "-c"]
