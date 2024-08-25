@@ -1,10 +1,11 @@
 # NAME: dclong/base
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 # shell
 SHELL ["/bin/bash", "-O", "extglob", "-c"]
 ENV HISTTIMEFORMAT="[%F %T %z]  "
 
+RUN userdel ubuntu
 RUN mkdir -p /workdir && chmod 777 /workdir
 WORKDIR /workdir
 COPY scripts /scripts
