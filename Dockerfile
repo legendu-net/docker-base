@@ -9,6 +9,7 @@ RUN mkdir -p /workdir && chmod 777 /workdir
 WORKDIR /workdir
 COPY scripts /scripts
 
+ENV EDITOR=nvim
 RUN apt-get update -y \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         sudo \
