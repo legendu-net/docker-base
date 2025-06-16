@@ -15,7 +15,7 @@ RUN apt-get update -y \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         sudo \
         pkg-config software-properties-common apt-transport-https \
-        file zip \
+        fd-find file zip \
         tzdata locales \
         bash-completion man-db \
         git openssh-client \
