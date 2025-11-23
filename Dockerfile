@@ -11,13 +11,14 @@ WORKDIR /workdir
 COPY scripts /scripts
 
 ENV EDITOR=nvim
+ENV VISUAL=nvim
 RUN apt-get update -y \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
         sudo \
         pkg-config software-properties-common apt-transport-https \
-        fd-find file zip \
+        fd-find file zip less \
         tzdata locales \
-        bash-completion man-db \
+        man-db \
         git openssh-client \
         rsync curl \
     && curl -sSL https://raw.githubusercontent.com/legendu-net/icon/main/install_icon.sh | bash \
