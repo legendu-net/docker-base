@@ -7,7 +7,7 @@ if [[ "$(which apt-get)" != "" ]]; then
 fi
 
 # purge pip cache
-for cmd in python python3 python3.7; do
+for cmd in python python3; do
     if [[ "$(which $cmd)" != "" ]]; then
         $cmd -m pip cache purge -qqq
     fi
@@ -43,6 +43,6 @@ if [[ -d "$HOME/go/pkg/mod/" ]]; then
 fi
 
 # manual remove temp dirs
-rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/* ~/.cache/
+rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/* ~/.config/ ~/.cache/
 
 exit 0
