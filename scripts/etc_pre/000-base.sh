@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
-icon git -c
-icon nvim -c
+su -m $DOCKER_USER -c "icon git -c"
+su -m $DOCKER_USER -c "icon nvim -c"
+
