@@ -1,5 +1,5 @@
 # NAME: dclong/base
-FROM ubuntu:24.04
+FROM ubuntu:25.10
 
 # shell
 SHELL ["/bin/bash", "-O", "extglob", "-c"]
@@ -22,7 +22,7 @@ RUN apt-get update -y \
         git openssh-client \
         rsync curl \
     && curl -sSL https://raw.githubusercontent.com/legendu-net/icon/main/install_icon.sh \
-        | bash -s -- -v v0.34.3 \
+        | bash -s -- -v v0.37.1 \
     && icon neovim -iy \
     && echo "Set disable_coredump false" >> /etc/sudo.conf \
     && /scripts/sys/purge_cache.sh
