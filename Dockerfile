@@ -12,8 +12,8 @@ COPY scripts /scripts
 
 ENV EDITOR=nvim
 ENV VISUAL=nvim
-RUN apt-get update -y \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+RUN apt-get -y update \
+    && DEBIAN_FRONTEND=noninteractive apt-get -y install --no-install-recommends \
         sudo \
         pkg-config software-properties-common apt-transport-https \
         fd-find file zip less \
