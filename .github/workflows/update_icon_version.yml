@@ -1,7 +1,7 @@
 name: Update code-server Version
 on:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '0 */4 * * *'
 jobs:
   update-code-server-version:
     runs-on: ubuntu-latest
