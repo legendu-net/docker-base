@@ -20,7 +20,7 @@ def parse_latest_version() -> str:
 
 
 def push_changes():
-    proc = sp.run("git status --porcelain", shell=True, check=True)
+    proc = sp.run("git status --porcelain", shell=True, check=True, capture_output=True)
     if proc.stdout:
         sp.run(
             """git add Dockerfile \
