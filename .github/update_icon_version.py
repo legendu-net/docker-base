@@ -37,6 +37,7 @@ def push_changes():
 
 def update_version() -> None:
     version = parse_latest_version()
+    print(f"The latest version of icon is v{version}.")
     text = DOCKERFILE.read_text()
     text = re.sub(r"-v v\d+\.\d+\.\d+", "-v v" + version, text)
     DOCKERFILE.write_text(text)
