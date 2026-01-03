@@ -24,7 +24,7 @@ def push_changes():
     if proc.stdout:
         sp.run(
             """git add Dockerfile \
-            && git commit -m "update version of code-server" \
+            && git commit -m "update version of icon" \
             && git push origin dev
             """.strip(),
             shell=True,
