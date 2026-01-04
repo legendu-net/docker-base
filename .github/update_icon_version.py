@@ -20,11 +20,11 @@ def parse_latest_version() -> str:
 
 
 def push_changes():
-    proc = sp.run("git status --porcelain", shell=True, check=True)
+    proc = sp.run("git status --porcelain", shell=True, check=True, capture_output=True)
     if proc.stdout:
         sp.run(
             """git add Dockerfile \
-            && git commit -m "update version of code-server" \
+            && git commit -m "update version of icon" \
             && git push origin dev
             """.strip(),
             shell=True,
@@ -37,6 +37,7 @@ def push_changes():
 
 def update_version() -> None:
     version = parse_latest_version()
+    print(f"The latest version of icon is v{version}.")
     text = DOCKERFILE.read_text()
     text = re.sub(r"-v v\d+\.\d+\.\d+", "-v v" + version, text)
     DOCKERFILE.write_text(text)
