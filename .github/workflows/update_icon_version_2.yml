@@ -1,0 +1,14 @@
+name: Update icon Version
+on:
+  repository_dispatch:
+    types: [new-release-published]
+
+jobs:
+  update-icon-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use Release Info
+        run: |
+          echo "Triggered by release: ${{ github.event.client_payload.tag_name }}"
+          echo "Release Notes: ${{ github.event.client_payload.body }}"
+
