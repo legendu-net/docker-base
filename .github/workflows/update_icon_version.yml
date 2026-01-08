@@ -1,4 +1,4 @@
-name: Update code-server Version
+name: Update icon Version
 on:
   schedule:
     - cron: '0 */4 * * *'
