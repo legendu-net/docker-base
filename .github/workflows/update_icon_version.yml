@@ -6,6 +6,11 @@ jobs:
   update-code-server-version:
     runs-on: ubuntu-latest
     steps:
+      - name: Configure git
+        run: |
+          curl -sSL https://raw.githubusercontent.com/legendu-net/icon/main/install_icon.sh \
+            | sudo bash - \
+          icon git -c
       - uses: actions/checkout@v6
       - name: Install uv
         run: curl -LsSf https://astral.sh/uv/install.sh | sh
