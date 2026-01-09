@@ -9,7 +9,7 @@ jobs:
       - name: Configure git
         run: |
           curl -sSL https://raw.githubusercontent.com/legendu-net/icon/main/install_icon.sh \
-            | sudo bash - \
+            | sudo bash -
           icon git -c
       - uses: actions/checkout@v6
       - name: Install uv
