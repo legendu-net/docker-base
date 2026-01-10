@@ -9,6 +9,7 @@ jobs:
       - name: Clone Repository
         run: |
           ls -lha
+          rm -rf docker-base
           git clone git@github.com:legendu-net/docker-base.git
           ls -lha
       - name: Run Python Script
