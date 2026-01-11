@@ -1,7 +1,7 @@
 name: Update icon Version
 on:
   schedule:
-    - cron: '0 */4 * * *'
+    - cron: '0 */2 * * *'
 jobs:
   update-icon-version:
     runs-on: self-hosted
