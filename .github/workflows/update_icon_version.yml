@@ -11,7 +11,6 @@ jobs:
           curl -sSL https://raw.githubusercontent.com/legendu-net/github_actions_scripts/main/git_clone_repo.fish | fish
       - name: Run Python Script
         run: |
-          ls -lha
-          .github/update_icon_version.py
-          ls -lha
+          curl -sSL https://raw.githubusercontent.com/legendu-net/github_actions_scripts/main/update_version_dockerfile.py \
+            | python -- --repo legendu-net/icon --pattern "-v v\\d+\\.\\d+\\.\\d+" --replace "-v {version}"
 
