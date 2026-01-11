@@ -1,14 +1,20 @@
-name: Update code-server Version
+name: Update icon Version
 on:
   schedule:
-    - cron: '0 */4 * * *'
+    - cron: '0 */2 * * *'
 jobs:
-  update-code-server-version:
-    runs-on: ubuntu-latest
+  update-icon-version:
+    runs-on: self-hosted
     steps:
-      - uses: actions/checkout@v6
-      - name: Install uv
-        run: curl -LsSf https://astral.sh/uv/install.sh | sh
+      - name: Clone Repository
+        run: |
+          curl -sSL https://raw.githubusercontent.com/legendu-net/github_actions_scripts/main/git_clone_repo.fish | fish
       - name: Run Python Script
-        run: .github/update_icon_version.py
+        run: |
+          curl -sSL https://raw.githubusercontent.com/legendu-net/github_actions_scripts/main/update_version_dockerfile.py \
+            | uv run --script - \
+            --repo legendu-net/icon \
+            --pattern "-v v\\d+\\.\\d+\\.\\d+" \
+            --replace "-v {version}" \
+            --token ${{ secrets.GITHUBACTIONS }}
 
