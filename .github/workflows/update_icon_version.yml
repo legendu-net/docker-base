@@ -3,19 +3,12 @@ on:
   schedule:
     - cron: '0 */4 * * *'
 jobs:
-  update-code-server-version:
+  update-icon-version:
     runs-on: self-hosted
     steps:
       - name: Clone Repository
         run: |
-          pwd
-          mkdir -p $(dirname $GITHUB_WORKSPACE)
-          cd $(dirname $GITHUB_WORKSPACE)
-          rm -rf docker-base
-          git clone git@github.com:legendu-net/docker-base.git
-          cd docker-base
-          pwd
-          ls -lha
+          curl -sSL https://raw.githubusercontent.com/legendu-net/github_actions_scripts/main/git_clone_repo.fish | fish
       - name: Run Python Script
         run: |
           ls -lha
