@@ -12,5 +12,9 @@ jobs:
       - name: Run Python Script
         run: |
           curl -sSL https://raw.githubusercontent.com/legendu-net/github_actions_scripts/main/update_version_dockerfile.py \
-            | python -- --repo legendu-net/icon --pattern "-v v\\d+\\.\\d+\\.\\d+" --replace "-v {version}"
+            | uv run - -- \
+            --repo legendu-net/icon \
+            --pattern "-v v\\d+\\.\\d+\\.\\d+" \
+            --replace "-v {version}" \
+            --token ${{ secrets.GITHUBACTIONS }}
 
