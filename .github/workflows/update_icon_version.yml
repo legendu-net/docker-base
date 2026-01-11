@@ -4,11 +4,9 @@ on:
     - cron: '0 */2 * * *'
 jobs:
   update-icon-version:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
-      - name: Clone Repository
-        run: |
-          curl -sSL https://raw.githubusercontent.com/legendu-net/github_actions_scripts/main/git_clone_repo.fish | fish
+      - uses: actions/checkout@v6
       - name: Run Python Script
         run: |
           curl -sSL https://raw.githubusercontent.com/legendu-net/github_actions_scripts/main/update_version_dockerfile.py \
